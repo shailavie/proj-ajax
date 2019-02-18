@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Address Book</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="lib/animate/animate.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/icon.png" type="image/gif" sizes="16x16">
+</head>
+
+<body onload="init()">
+    <section class="ask-container center-all">
+        <h1>Ask Jeeves</h1>
+        <h2>Yes or No</h2>
+        <p hidden>Finding an answer...</p>
+        <div class="input-cont">
+            <input class="question" type="text" onchange="checkQuestion(this.value)" placeholder="Your Question">
+            <button class="btn btn-secondary reset" onclick="initAsk()">Reset</button>
+            <!-- <div class="clear" onclick="initAsk()">x</div> -->
+        </div>
+        <div class="ask-inner-container" id="yes-no-res"></div>
+        <secttion class="answer center-all">
+            <div class="answer">
+                <h2 class="yes-no"></h2>
+                <div class="yes-no-img-cont">
+                    <img class="yes-no-img" src="" alt="">
+                </div>
+                <h2 class="joke"></h2>
+                <div class="dog-cont">
+                    <img class="dog" src="" />
+                </div>
+            </div>
+        </secttion>
+    </section>
+    <h1 class="title">Random People</h1>
+    <div class="center-all">
+        <button class="btn btn-primary" onclick="getUsers()">Fetch me other people</button><br /><br />
+        <input class="user-num" type="number" placeholder="How many?" onchange="setUsers(this.value); getUsers()">
+    </div>
+    <section class="users-container">
+        <div class="users-inner-container" id="results"></div>
+    </section>
+
+
+    <footer></footer>
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="js/main-ajax.js"></script>
+</body>
+
+</html>
